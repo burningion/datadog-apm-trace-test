@@ -1,14 +1,14 @@
 # Datadog APM Trace Test
 
-This is just a quick test repo to see how long of traces Datadog's APM infrastructure can handle. I ran it for 6.5 hours, and still got traces. 
+This is just a quick test repo to see how long of traces Datadog's APM infrastructure can handle. I ran it for 6.5 hours, and still had traces. 
 
 You're welcome to add a language to test with a PR.
 
 ## How it works
 
-Rather than using threads, `runsleepy.py` runs a bunch of instances of a Ruby and Python script via the command line.
+Rather than using threads, `runsleepy.py` runs a bunch of instances of a Ruby and Python script via the command line. It assumes you have the Datadog Agent running locally, with APM enabled. If you're running from within a container instead, check each file for the line to uncomment.
 
-It uses Python's `subprocess.Popen` function, spinning up a child program in a new process without waiting.
+The script itself uses Python's `subprocess.Popen` function, spinning up a child program for each duration in a new process without waiting.
 
 Running it looks like this:
 
